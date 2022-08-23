@@ -13,7 +13,7 @@ public class StreamingExecution {
                 for (int i = start; i <= end; i++) {
                     double result = Math.sqrt(i);
                     try (FileWriter fileWriter = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\WriteText.txt", true)) {
-                        fileWriter.write(i + " " + result + "\n");
+                        fileWriter.write("√" + i + " = " + result + "\n");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
