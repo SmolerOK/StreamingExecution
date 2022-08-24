@@ -2,11 +2,10 @@ package EducationThread;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class StreamingExecution {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         long start = System.currentTimeMillis();
 
         double[] arrayFirst = new double[250_000];
@@ -20,12 +19,11 @@ public class StreamingExecution {
 
         CalculatingRoot(arrayThree, arrayFour);
 
-        try (FileWriter fileWriter =
-                     new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\WriteText.txt", false)) {
+        try (FileWriter fileWriter = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\WriteText.txt", false)) {
             System.out.println("Print...");
             for (int i = 0; i < 1_000_000; i++) {
                 if (i < 250_000) fileWriter.write("√" + (i + 1) + " = " + arrayFirst[i] + "\n");
-                else if (i >= 250_000 && i < 500_000) fileWriter.write("√" + (i + 1) + " = " + arrayTwo[i] + "\n");
+                else if (i < 500_000) fileWriter.write("√" + (i + 1) + " = " + arrayTwo[i] + "\n");
                 else if (i < 750_000) fileWriter.write("√" + (i + 1) + " = " + arrayThree[i] + "\n");
                 else fileWriter.write("√" + (i + 1) + " = " + arrayFour[i] + "\n");
             }
