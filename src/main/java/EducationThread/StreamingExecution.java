@@ -5,20 +5,30 @@ import java.io.IOException;
 
 public class StreamingExecution {
     public static void main(String[] args) {
-        int fixValue = 250_000;
-        for (int thread = 0; thread < 4; thread++) {
-            int start = fixValue * thread;
-            int end = start + fixValue;
-            new Thread(() -> {
-                for (int i = start; i <= end; i++) {
-                    double result = Math.sqrt(i);
-                    try (FileWriter fileWriter = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\WriteText.txt", true)) {
-                        fileWriter.write("√" + i + " = " + result + "\n");
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }).start();
+        int[] arrayFirst = new int[250_000];
+        int[] arrayTwo = new int[250_000];
+        int[] arrayThree = new int[250_000];
+        int[] arrayFour = new int[250_000];
+
+        new Thread(() -> {
+
+        }).start();
+
+        new Thread(() -> {
+
+        }).start();
+
+        new Thread(() -> {
+
+        }).start();
+
+        new Thread(() -> {
+
+        }).start();
+
+        try (FileWriter fileWriter = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\WriteText.txt", true)) {
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
