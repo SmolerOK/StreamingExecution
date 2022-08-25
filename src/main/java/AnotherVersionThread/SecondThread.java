@@ -5,7 +5,7 @@ public class SecondThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Второй поток запущен....");
+        System.out.println("Второй поток запущен...");
         double[] getCount = mainThread.getCount();
         for (int i = 500_000; i <= 1_000_000; i++) {
             getCount[i - 1] = i;
@@ -17,6 +17,6 @@ public class SecondThread extends Thread {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Второй поток завершен.");
+        System.out.println("Второй поток завершился.");
     }
 }

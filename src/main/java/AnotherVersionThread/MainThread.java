@@ -17,17 +17,21 @@ public class MainThread {
         SecondThread secondThread = new SecondThread();
 
         firstThread.start();
-        firstThread.join();
         secondThread.start();
-        secondThread.join();
 
+        Thread.sleep(3000);
 
-        try (FileWriter writers = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\src\\main\\java\\AnotherVersionThread\\Text.txt", false)) {
+        try (FileWriter writers =
+                     new FileWriter(
+                             "C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\src\\main\\java\\AnotherVersionThread\\Text.txt",
+                             false)) {
+            System.out.println("Запись результата в файл...");
             int i = 1;
             for (double counts : count) {
                 writers.write("√" + (i) + " = " + counts + "\n");
                 i++;
             }
+            System.out.println("Готово!");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
