@@ -8,9 +8,11 @@ public class FirstThread extends Thread {
         System.out.println("Первый поток запущен...");
         double[] getCount = mainThread.getCount();
         for (int i = 0; i < 500_000; i++) {
-            getCount[i] = i;
+
+            getCount[i] = i + 1;
             double result = Math.sqrt(getCount[i]);
             getCount[i] = result;
+
         }
         try {
             Thread.sleep(1000);

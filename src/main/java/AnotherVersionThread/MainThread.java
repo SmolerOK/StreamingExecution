@@ -21,10 +21,7 @@ public class MainThread {
 
         Thread.sleep(3000);
 
-        try (FileWriter writers =
-                     new FileWriter(
-                             "C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\src\\main\\java\\AnotherVersionThread\\Text.txt",
-                             false)) {
+        try (FileWriter writers = new FileWriter("C:\\Users\\Sergey\\IdeaProjects\\EducationThread\\src\\main\\java\\AnotherVersionThread\\Text.txt", false)) {
             System.out.println("Запись результата в файл...");
             int i = 1;
             for (double counts : count) {
