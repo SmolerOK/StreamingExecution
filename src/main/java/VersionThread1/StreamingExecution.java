@@ -1,4 +1,4 @@
-package EducationThread;
+package VersionThread1;
 
 import java.io.FileWriter;
 import java.io.IOException;

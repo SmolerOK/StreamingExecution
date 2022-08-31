@@ -1,4 +1,4 @@
-package AnotherVersionThread;
+package VersionThread2;
 
 public class SecondThread extends Thread {
     MainThread mainThread = new MainThread();

@@ -1,4 +1,4 @@
-package AnotherVersionThread;
+package VersionThread2;
 
 import java.io.FileWriter;
 import java.io.IOException;
